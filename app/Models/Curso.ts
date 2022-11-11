@@ -1,7 +1,7 @@
 import { DateTime } from 'luxon'
 import { 
-  BaseModel, BelongsTo, belongsTo, column, HasMany,
-  hasMany, ManyToMany, manyToMany
+  BaseModel, BelongsTo, belongsTo, column,
+  ManyToMany, manyToMany
 } from '@ioc:Adonis/Lucid/Orm'
 import Turno from './Turno'
 import User from './User'
@@ -25,7 +25,7 @@ export default class Curso extends BaseModel {
   @belongsTo(()=> User)
   public user: BelongsTo<typeof User>
 
-  @manyToMany(() => Topic, {
+  @manyToMany(() => Turno, {
     localKey: 'id',
     pivotForeignKey: 'curso_id',
     relatedKey: 'id',

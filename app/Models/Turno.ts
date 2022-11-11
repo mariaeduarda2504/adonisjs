@@ -1,9 +1,8 @@
 import { DateTime } from 'luxon'
 import { 
-  BaseModel, BaseModel, BelongsTo, belongsTo, column, HasMany,
-  hasMany, ManyToMany, manyToMany 
+  BaseModel, BelongsTo, belongsTo, column, ManyToMany, manyToMany 
 } from '@ioc:Adonis/Lucid/Orm'
-import { createUnparsedSourceFile } from 'typescript'
+import Curso from './Curso'
 
 export default class Turno extends BaseModel {
   @column({ isPrimary: true })
@@ -18,7 +17,7 @@ export default class Turno extends BaseModel {
   @column.dateTime({ autoCreate: true, autoUpdate: true })
   public updatedAt: DateTime
 
-  @manyToMany(()=> curso, {
+  @manyToMany(()=> Curso, {
     localKey: 'id',
     pivotForeignKey: 'curso_id'
   })
