@@ -3,7 +3,7 @@ import {
   BaseModel, BelongsTo, belongsTo, column,
   ManyToMany, manyToMany
 } from '@ioc:Adonis/Lucid/Orm'
-import Turno from './Turno'
+import Turno from './Topic'
 import User from './User'
 
 export default class Curso extends BaseModel {
